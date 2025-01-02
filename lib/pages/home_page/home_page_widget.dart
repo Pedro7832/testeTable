@@ -1,8 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -33,8 +31,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return GestureDetector(
       onTap: () {
         FocusScope.of(context).unfocus();
@@ -59,29 +55,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           centerTitle: false,
           elevation: 2.0,
         ),
-        body: SafeArea(
+        body: const SafeArea(
           top: true,
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.max,
-              children: [
-                SizedBox(
-                  width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: 700.0,
-                  child: custom_widgets.TableSmart(
-                    width: MediaQuery.sizeOf(context).width * 1.0,
-                    height: 700.0,
-                    dataJson: FFAppState().json,
-                  ),
-                ),
-                Container(
-                  width: 100.0,
-                  height: 100.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).primary,
-                  ),
-                ),
-              ],
+              children: [],
             ),
           ),
         ),
